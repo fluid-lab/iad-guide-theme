@@ -1,0 +1,23 @@
+{{/*
+    Copyright (c) 2017, OCAD University, [BSD-3-Clause](https://github.com/fluid-lab/iad-guide-theme/blob/master/LICENSE)
+    Copyright (c) 2016 Vimux, [MIT License](https://github.com/Vimux/blank/blob/master/LICENSE.md)
+*/}}
+
+        <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+
+        {{ $viewedSection := .CurrentSection }}
+        {{ $viewedPage := . }}
+
+        <nav class="nav-top">
+            <ul class="menu">
+                {{/* Add navigation of the Sections for the site. */}}
+                {{ range .Site.Home.Sections }}
+                {{ partial "nav-li.html" (dict "param1" $viewedSection "param2" .CurrentSection "context" . ) }}
+                {{ end }}
+
+                {{/* Add navigation of the Pages with menu parameter set to "main". */}}
+                {{ range .Site.Menus.main }}
+                {{ partial "nav-li.html" (dict "param1" $viewedPage.Title "param2" .Name "context" . "isMenu" "true") }}
+                {{ end }}
+            </ul>
+        </nav>

@@ -1,0 +1,12 @@
+name = "iad-guide-theme"
+license = "BSD-3"
+licenselink = "https://github.com/fluid-lab/iad-guide-theme/blob/master/LICENSE"
+description = "A Hugo theme demonstrating how it can be used to build a website."
+homepage = "https://github.com/fluid-lab/iad-guide-theme/"
+tags = ["documentation", "accessibility", "UI Options", "Infusion"]
+features = ["documentation"]
+min_version = 0.19
+
+[author]
+  name = "Jonathan Hung"
+  homepage = "https://github.com/jhung"

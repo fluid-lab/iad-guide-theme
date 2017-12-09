@@ -1,0 +1,15 @@
+{{/*
+    Copyright (c) 2017, OCAD University, [BSD-3-Clause](https://github.com/fluid-lab/iad-guide-theme/blob/master/LICENSE)
+*/}}
+    <!-- Initialize UI Options JavaScript -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
+                tocTemplate: "{{"js/infusion/src/components/tableOfContents/html/TableOfContents.html" | absURL }}",
+                terms: {
+                    templatePrefix: "{{"js/infusion/src/framework/preferences/html" | absURL }}",
+                    messagePrefix: "{{"js/infusion/src/framework/preferences/messages" | absURL }}"
+                }
+            });
+        })
+    </script>

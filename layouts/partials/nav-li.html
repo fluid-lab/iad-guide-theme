@@ -1,0 +1,35 @@
+{{/*
+    Generate a navigation list item. If $param1 and $param2 are a match, then
+    add .current style class and aria-current attribute.
+
+    This partial can handle Pages, Sections, and Menu items. If passing Menu
+    items, then isMenu should be set to "true".
+
+    Input:
+    .param1  - value to compare to param2.
+    .param2  - value to compare to param1.
+    .context - the context which to get the title and permalink for the nav item.
+    .isMenu  - if the item to be rendered is a Menu content type, then .isMenu
+               should be true. If this parameter is missing or set to false,
+               then it is assume the item is a Page or Section content type.
+*/}}
+
+<li>
+    {{ if .isMenu }}
+        <a href="{{.context.URL}}"
+            {{ if eq .param1 .param2 }}
+                aria-current="page"
+                class="iad-nav-current"
+            {{ end }}>
+            {{.context.Name}}
+        </a>
+    {{ else }}
+        <a href="{{.context.Permalink}}"
+            {{ if eq .param1 .param2 }}
+                aria-current={{ if eq "section" .context.Kind }} "location" {{ else }} "page" {{ end }}
+                class="iad-nav-current"
+            {{ end }}>
+            {{.context.Title}}
+        </a>
+    {{ end }}
+</li>

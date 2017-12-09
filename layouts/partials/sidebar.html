@@ -1,0 +1,16 @@
+{{/*
+    Copyright (c) 2017, OCAD University, [BSD-3-Clause](https://github.com/fluid-lab/iad-guide-theme/blob/master/LICENSE)
+    Copyright (c) 2016 Vimux, [MIT License](https://github.com/Vimux/blank/blob/master/LICENSE.md)
+*/}}
+
+        <nav class="nav-sidebar">
+            <h1>Navigation</h1>
+            {{ $viewedPage := . }}
+            <ul class="vertical menu">
+            {{ range where .Site.Pages "Section" .Section }}
+                {{ if ne .Kind "section"}}
+                    {{ partial "nav-li.html" (dict "param1" $viewedPage.Title "param2" .Title "context" . ) }}
+                {{ end }}
+            {{ end }}
+            </ul>
+        </nav>

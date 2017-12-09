@@ -1,0 +1,21 @@
+{{/*
+    Copyright (c) 2017, OCAD University, [BSD-3-Clause](https://github.com/fluid-lab/iad-guide-theme/blob/master/LICENSE)
+    Copyright (c) 2016 Vimux, [MIT License](https://github.com/Vimux/blank/blob/master/LICENSE.md)
+*/}}
+
+{{ define "main" }}
+    <h1>Welcome to the CMHR IAD Guide</h1>
+
+
+
+        {{ partial "infusion-ui-options-toc.html" . }}
+
+        {{ .Content }}
+
+        {{ $paginator := .Paginate (.Site.Sections) }}
+
+        {{ range $paginator.Pages.ByWeight }}
+            {{ partial "summary.html" . }}
+        {{ end }}
+        {{ partial "pagination.html" . }}
+{{ end }}

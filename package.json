@@ -1,0 +1,28 @@
+{
+  "name": "cmhr-theme",
+  "version": "0.0.1",
+  "description": "Hugo theme for CMHR IAD Guide site.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "infusion": "^3.0.0-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluid-lab/cmhr-theme.git"
+  },
+  "keywords": [
+    "hugo",
+    "infusion",
+    "accessibility",
+    "theme"
+  ],
+  "author": "Jonathan Hung <jhung@ocadu.ca>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/fluid-lab/cmhr-theme/issues"
+  },
+  "homepage": "https://github.com/fluid-lab/cmhr-theme#readme"
+}
